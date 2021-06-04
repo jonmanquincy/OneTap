@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneTap.Core", "OneTap.Core\OneTap.Core.csproj", "{70BA06D2-0B42-4EB8-9676-F57C3709D656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneTap.Android", "OneTap.Android\OneTap.Android.csproj", "{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70BA06D2-0B42-4EB8-9676-F57C3709D656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BA06D2-0B42-4EB8-9676-F57C3709D656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BA06D2-0B42-4EB8-9676-F57C3709D656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BA06D2-0B42-4EB8-9676-F57C3709D656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FC1E27-DA8A-4BF6-9DC0-09E3100406DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26DD7D4E-FC30-48EC-A386-E1788A22B904}
+	EndGlobalSection
+EndGlobal
