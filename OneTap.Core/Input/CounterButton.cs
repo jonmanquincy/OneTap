@@ -15,6 +15,7 @@ namespace OneTap.Core.Input
         private Matrix globalTransformation;
         public readonly Texture2D texture;
 
+        public bool IsPressed = false;
         public CounterButton(Texture2D texture)
         {
             this.texture = texture;
@@ -27,20 +28,24 @@ namespace OneTap.Core.Input
             spriteBatch.Draw(texture, new Vector2(64, baseScreenSize.Y - 64), null, Color.White, -MathHelper.PiOver2, spriteCenter, 1, SpriteEffects.None, 0);
         }
 
-        public GamePadState GetState(TouchCollection touchState, GamePadState gpState)
+        public GamePadState GetState(GraphicsDevice graphicsDevice, TouchCollection touchState, GamePadState gpState)
         {
             //Work out what buttons are pressed based on the touchState
             Buttons buttonsPressed = 0;
 
+            RenderTarget2D RenderTarget = new RenderTarget2D(graphicsDevice, (int)this.texture.Width, (int)this.texture.Height);
+
             foreach (var touch in touchState)
             {
+
                 if (touch.State == TouchLocationState.Moved || touch.State == TouchLocationState.Pressed)
                 {
                     //Scale the touch position to be in _baseScreenSize coordinates
                     Vector2 pos = touch.Position;
-                    Vector2.Transform(ref pos, ref globalTransformation, out pos);
+                    var virtualX = Convert.ToSingle(pos.X) * Convert.ToSingle(RenderTarget.Width) / Convert.ToSingle(graphicsDevice.Viewport.Width);
+                    var virtualY = Convert.ToSingle(pos.Y) * Convert.ToSingle(RenderTarget.Height) / Convert.ToSingle(graphicsDevice.Viewport.Height);
 
-                    if (pos.X < 128)
+                    if (pos.X < virtualX && pos.Y < virtualY)
                         buttonsPressed |= Buttons.DPadLeft;
                     else if (pos.X < 256)
                         buttonsPressed |= Buttons.DPadRight;
@@ -48,6 +53,8 @@ namespace OneTap.Core.Input
                         buttonsPressed |= Buttons.A;
                 }
             }
+
+
 
             //Combine the buttons of the real gamepad
             var gpButtons = gpState.Buttons;
