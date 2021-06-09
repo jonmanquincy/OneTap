@@ -36,7 +36,7 @@ namespace OneTap
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            button = new CounterButton(Content.Load<Texture2D>("red_button_logo"), Content.Load<Texture2D>("red_button_logo_pressed"),
+            button = new CounterButton(Content.Load<Texture2D>("red_button_logo"), Content.Load<Texture2D>("red_button_logo_pressed_2"),
                                        Content.Load<SoundEffect>("thud_analog_wave_at_betchy_jon"), this);
         }
 
